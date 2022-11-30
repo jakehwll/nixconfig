@@ -1,11 +1,11 @@
-# nixconfig-starter
+# nixconfig
 
-A Nix/NixOS configuration using flakes to help you get started quickly
+A Nix/NixOS configured to my use-case.
+
+> **Note**:
+> This configuration is forked from [dlip/nixconfig-starter](https://github.com/dlip/nixconfig-starter) and configured to my use-case. 
 
 ## Getting Started
-
-- Fork this repo if you want to be able to save your customizations. For example, name it nixconfig.
-
 
 ### NixOS
 
@@ -14,7 +14,7 @@ A Nix/NixOS configuration using flakes to help you get started quickly
 
 ```
 nix-shell -p git
-git clone https://github.com/<GITHUB_USER>/nixconfig.git
+git clone https://github.com/jakehwll/nixconfig.git
 cd nixconfig
 cp /etc/nixos/*.nix systems/nixos
 nano flake.nix
@@ -35,7 +35,8 @@ docker-compose run --name mynix nix bash
 home-manager switch --flake .#docker
 ```
 
-Note: be careful of running `docker system prune` while the container is stopped since it will delete it
+> **Note**:
+> Be careful of running `docker system prune` while the container is stopped since it will delete it
 
 To restart the container after a reboot run:
 
