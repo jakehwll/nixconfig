@@ -7,7 +7,7 @@ A Nix/NixOS configured to my use-case.
 
 ## Getting Started
 
-### NixOS
+### ❄️ NixOS
 
 - Download the [ISO](https://nixos.org/download.html#nixos-iso) and write it to a flash drive
 - Install using the GUI installer or terminal
@@ -28,7 +28,7 @@ sudo nixos-rebuild boot --flake .#nixos
 sudo reboot
 ```
 
-### Docker
+### 🐳 Docker
 
 ```
 docker-compose run --name mynix nix bash
