@@ -10,11 +10,10 @@
     let
       users = {
         me = {
-          # CHANGE ME TO YOUR USER
-          name = "Jane Doe";
-          username = "jdoe";
-          homeDirectory = "/home/jdoe";
-          email = "jane.doe@example.com";
+          name = "Jake Howell";
+          username = "wnxr";
+          homeDirectory = "/home/wnxr";
+          email = "jake@hwll.me";
         };
         docker = {
           name = "Docker User";

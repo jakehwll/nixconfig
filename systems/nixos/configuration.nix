@@ -78,7 +78,7 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.hwll = {
+  users.users.wnxr = {
     isNormalUser = true;
     description = "Jake Howell";
     extraGroups = [ "networkmanager" "wheel" ];
