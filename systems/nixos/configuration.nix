@@ -92,6 +92,7 @@
   environment.systemPackages = with pkgs; [
     vscode
     wget
+    pkgs.tailscale
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
