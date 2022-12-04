@@ -50,8 +50,8 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                # CHANGE 'jdoe' TO YOUR USERNAME
-                users.jdoe = {
+                # CHANGE 'wnxr' TO YOUR USERNAME
+                users.wnxr = {
                   imports = [
                     ./home
                     ./home/graphical.nix
