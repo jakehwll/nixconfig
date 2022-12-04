@@ -14,6 +14,9 @@
     initExtra = ''
       [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
       export EDITOR=vscode
+      export ZSH="$HOME/.oh-my-zsh"
+      ZSH_THEME="agnoster"
+      source $ZSH/oh-my-zsh.sh
     '';
 
     oh-my-zsh = {

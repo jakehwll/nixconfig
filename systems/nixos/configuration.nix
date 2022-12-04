@@ -93,6 +93,12 @@
     vscode
     wget
     pkgs.tailscale
+    pkgs.bitwarden
+    pkgs.bitwarden-cli
+    pkgs.lastpass-cli
+    pkgs.discord
+    pkgs.tdesktop
+    pkgs.spotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
