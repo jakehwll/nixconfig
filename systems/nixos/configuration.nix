@@ -98,6 +98,7 @@
   environment.systemPackages = with pkgs; [
     vscode
     wget
+    pkgs.google-chrome
     pkgs.tailscale
     pkgs.bitwarden
     pkgs.bitwarden-cli
