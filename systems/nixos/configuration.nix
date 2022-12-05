@@ -98,14 +98,23 @@
   environment.systemPackages = with pkgs; [
     vscode
     wget
-    pkgs.google-chrome
-    pkgs.tailscale
-    pkgs.bitwarden
-    pkgs.bitwarden-cli
-    pkgs.lastpass-cli
-    pkgs.discord
-    pkgs.tdesktop
-    pkgs.spotify
+    docker
+    docker-compose
+    docker-buildx
+    awscli
+    nodePackages.npm
+    postman
+    dbeaver
+    slack
+    google-chrome
+    tailscale
+    bitwarden
+    bitwarden-cli
+    lastpass-cli
+    discord
+    tdesktop
+    spotify
+    teams
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
