@@ -11,12 +11,13 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  # Somehow I got roped into using systemd-boot.
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "/dev/sda";
+  # boot.loader.grub.useOSProber = true;
 
   networking.hostName = "wnxr-nix";
-  networking.wireless.enable = true;
+  # networking.wireless.enable = true;
   networking.networkmanager.enable = true;
 
   # Set your time zone.
