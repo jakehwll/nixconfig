@@ -99,29 +99,37 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vscode
     wget
-    docker
-    docker-compose
-    docker-buildx
-    awscli
-    nodePackages.npm
-    postman
-    dbeaver
-    slack
-    google-chrome
     tailscale
+
+    vscode
+    dbeaver
+    postman
+
+    google-chrome
+    spotify
+    
     bitwarden
     bitwarden-cli
     lastpass-cli
+
+    docker
+    docker-compose
+    docker-buildx
+    nodePackages.npm
+    awscli
+    
+    slack
     discord
     tdesktop
-    spotify
     teams
   ];
 
   # Experimentals
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Services
+  services.tailscale.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
