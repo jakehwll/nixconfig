@@ -124,6 +124,9 @@
     discord
     tdesktop
     teams
+
+    transgui
+    openrgb
   ];
 
   # Experimentals
