@@ -24,6 +24,7 @@
   networking.hostName = "wnxr-nix";
   # networking.wireless.enable = true;
   networking.networkmanager.enable = true;
+  networking.firewall.checkReversePath = "loose";
 
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
@@ -130,6 +131,7 @@
 
   # Services
   services.tailscale.enable = true;
+  services.flatpak.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
