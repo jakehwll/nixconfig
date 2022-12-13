@@ -119,6 +119,7 @@
     docker-buildx
     nodePackages.npm
     awscli
+    lens
     
     slack
     discord
