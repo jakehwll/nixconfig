@@ -130,6 +130,7 @@
     openrgb
 
     htop
+    appimage-run
   ];
 
   # Experimentals
