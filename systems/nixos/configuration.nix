@@ -127,6 +127,8 @@
 
     transgui
     openrgb
+
+    htop
   ];
 
   # Experimentals
