@@ -36,7 +36,7 @@
         "urltools"
         "thefuck" 
       ];
-      theme = "agnoster"
+      theme = "agnoster";
     };
   };
 }
