@@ -16,8 +16,17 @@
 
   home.packages = with pkgs; [
     wget
+    tailscale
+    bitwarden-cli
+    lastpass-cli
+    docker
+    docker-compose
+    docker-buildx
+    nodePackages.npm
+    awscli
+    htop
+    appimage-run
     unzip
     zip
-    docker-compose
   ];
 }

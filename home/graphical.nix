@@ -8,5 +8,15 @@
     dbeaver
     google-chrome
     lens
+    spotify
+    bitwarden
+    vscode
+    postman
+    slack
+    discord
+    tdesktop
+    teams
+    transgui
+    openrgb
   ];
 }

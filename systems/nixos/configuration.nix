@@ -99,39 +99,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget
-    tailscale
-
-    vscode
-    dbeaver
-    postman
-
-    google-chrome
-    spotify
-    
-    bitwarden
-    bitwarden-cli
-    lastpass-cli
-
-    docker
-    docker-compose
-    docker-buildx
-    nodePackages.npm
-    awscli
-    lens
-    
-    slack
-    discord
-    tdesktop
-    teams
-
-    transgui
-    openrgb
-
-    htop
-    appimage-run
-  ];
+  environment.systemPackages = with pkgs; [];
 
   # Experimentals
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
