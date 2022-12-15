@@ -6,6 +6,7 @@
   ];
   home.packages = with pkgs; [
     dbeaver
+    firefox
     google-chrome
     lens
     spotify
