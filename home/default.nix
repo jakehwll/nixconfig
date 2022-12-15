@@ -28,5 +28,6 @@
     unzip
     zip
     oh-my-zsh
+    thefuck
   ];
 }
