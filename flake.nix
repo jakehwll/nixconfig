@@ -45,6 +45,7 @@
           pkgs = pkgsForSystem { system = "x86_64-linux"; };
           modules = [
             ./systems/nixos/configuration.nix
+            ./systems/common/default.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {

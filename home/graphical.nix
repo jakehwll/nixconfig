@@ -2,8 +2,11 @@
 {
   imports = [
     ./fonts.nix
+    ./vscode.nix
   ];
   home.packages = with pkgs; [
-    firefox
+    dbeaver
+    google-chrome
+    lens
   ];
 }
