@@ -88,7 +88,7 @@
   users.users.wnxr = {
     isNormalUser = true;
     description = "Jake Howell";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   # Allow unfree packages
