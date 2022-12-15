@@ -91,6 +91,9 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
+  # Define a default shell to use, I like zsh.
+  users.defaultUserShell = pkgs.zsh;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

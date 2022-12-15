@@ -5,7 +5,6 @@
     ./bash.nix
     ./zsh.nix
     ./nvim.nix
-    ./starship.nix
   ];
 
   home.username = user.username;
@@ -28,5 +27,6 @@
     appimage-run
     unzip
     zip
+    oh-my-zsh
   ];
 }

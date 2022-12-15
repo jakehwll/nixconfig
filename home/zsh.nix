@@ -16,7 +16,7 @@
       export EDITOR=code
     '';
 
-    ohMyZsh = {
+    oh-my-zsh = {
       enable = true;
       plugins = [
         "aws"
