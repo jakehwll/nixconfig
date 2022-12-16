@@ -19,5 +19,6 @@
     teams
     transgui
     openrgb
+    vlc
   ];
 }
