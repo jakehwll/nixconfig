@@ -29,5 +29,6 @@
     zip
     oh-my-zsh
     thefuck
+    nodejs
   ];
 }
