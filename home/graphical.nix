@@ -20,5 +20,6 @@
     transgui
     openrgb
     vlc
+    gnome3.gnome-tweaks
   ];
 }
