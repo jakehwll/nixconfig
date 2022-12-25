@@ -89,6 +89,14 @@
     isNormalUser = true;
     description = "Jake Howell";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
+    openssh.authorizedKeys.keys = [
+       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMCh17IWt/0b96aJhvWjPPC3/b20gm0/v0gL7FWY5F8U jake@wnxr-pc"
+       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO7XBBUwEre2ncKj+T3AswvafWCT7KoRCawBfbphoodj jake@wnxr-m1"
+       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA83MHAwOLP7defDnn41sBSJlDvGc7LlG8bZRo9OMN0x jake@wnxr-3a"
+       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFfxJejTjp3NoR5E6toB1P3MuAkwrAVmB+E4dKXR1lvE jake@wnxr-ipad"
+       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKPyjlu38491zPtzMWDh0YWeVltALR/nVtqghYV6McQK jake@wnxr-pro"
+       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFaYrxNBnGhGNzYislutpgl/DXIHo03LhmEJaJixLrc2 jake@wnxr-nix"
+    ];
   };
 
   # Define a default shell to use, I like zsh.
@@ -125,17 +133,10 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Enable the SSH daemon
-  nix.sshServe.enable = true;
-  nix.sshServe.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMCh17IWt/0b96aJhvWjPPC3/b20gm0/v0gL7FWY5F8U jake@wnxr-pc"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO7XBBUwEre2ncKj+T3AswvafWCT7KoRCawBfbphoodj jake@wnxr-m1"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA83MHAwOLP7defDnn41sBSJlDvGc7LlG8bZRo9OMN0x jake@wnxr-3a"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFfxJejTjp3NoR5E6toB1P3MuAkwrAVmB+E4dKXR1lvE jake@wnxr-ipad"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKPyjlu38491zPtzMWDh0YWeVltALR/nVtqghYV6McQK jake@wnxr-pro"
-  ];
+  services.openssh.enable = true;
+  services.openssh.passwordAuthentication = false;
+  services.openssh.kbdInteractiveAuthentication = false;
+  services.openssh.permitRootLogin = "no";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
