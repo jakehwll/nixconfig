@@ -30,5 +30,6 @@
     oh-my-zsh
     thefuck
     nodejs
+    stripe-cli
   ];
 }
