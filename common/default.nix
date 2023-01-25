@@ -8,7 +8,6 @@
       experimental-features = nix-command flakes
     '';
   };
-
   virtualisation.docker.enable = true;
   networking.firewall.enable = true;
 }
