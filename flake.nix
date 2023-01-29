@@ -40,7 +40,7 @@
         };
       };
       nixosConfigurations = {
-        wnxr_nix = nixpkgs.lib.nixosSystem {
+        wnxr-nix = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = pkgsForSystem { system = "x86_64-linux"; };
           modules = [
@@ -66,7 +66,7 @@
             }
           ];
         };
-        wnxr_work = nixpkgs.lib.nixosSystem {
+        wnxr-work = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = pkgsForSystem { system = "x86_64-linux"; };
           modules = [
