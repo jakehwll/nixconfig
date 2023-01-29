@@ -30,5 +30,6 @@
     oh-my-zsh
     nodejs
     stripe-cli
+    wally-cli
   ];
 }
