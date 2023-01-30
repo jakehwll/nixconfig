@@ -40,12 +40,38 @@
         };
       };
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem rec {
+        wnxr-nix = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = pkgsForSystem { system = "x86_64-linux"; };
           modules = [
-            ./systems/nixos/configuration.nix
-            ./systems/common/default.nix
+            ./systems/wnxr-nix/configuration.nix
+            ./common/default.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                # CHANGE 'wnxr' TO YOUR USERNAME
+                users.wnxr = {
+                  imports = [
+                    ./home
+                    ./home/graphical.nix
+                  ];
+                };
+
+                extraSpecialArgs = {
+                  user = users.me;
+                };
+              };
+            }
+          ];
+        };
+        wnxr-work = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          pkgs = pkgsForSystem { system = "x86_64-linux"; };
+          modules = [
+            ./systems/wnxr-work/configuration.nix
+            ./common/default.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {

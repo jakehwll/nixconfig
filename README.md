@@ -16,12 +16,13 @@ A Nix/NixOS configured to my use-case.
   nix-shell -p git
   git clone https://github.com/jakehwll/nixconfig.git
   cd nixconfig
-  cp /etc/nixos/*.nix systems/nixos
+  # you can use either `wnxr-nix` or `wnxr-work` below.
+  cp /etc/nixos/*.nix systems/wnxr-nix
   ```
 - Modify the `flake.nix` where it says "CHANGE ME" to the user you set up on installation
 - You can remove user specific packages since we are managing them using home-manager.
   ```nix
-  # /systems/nixos/configuration.nix
+  # /systems/wnxr-nix/configuration.nix
   packages = with pkgs; [
   # firefox
   # kate
@@ -29,7 +30,8 @@ A Nix/NixOS configured to my use-case.
   ];
   ```
 - ```sh
-  sudo nixos-rebuild boot --flake .#nixos
+  # pick between either `wnxr-nix` or `wnxr-work` below.
+  sudo nixos-rebuild boot --flake .#wnxr-nix
   sudo reboot
   ```
 
