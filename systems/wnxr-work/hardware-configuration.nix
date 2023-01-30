@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = [ "nvidia.NVreg_RegistryDwords=EnableBrightnessControl=1" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/874c3a42-e7d2-49c9-bd5a-f86f1489cc1c";
