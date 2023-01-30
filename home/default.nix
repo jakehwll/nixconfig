@@ -31,5 +31,6 @@
     thefuck
     nodejs
     stripe-cli
+    kubectl
   ];
 }
