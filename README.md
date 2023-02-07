@@ -78,3 +78,9 @@ docker start -i mynix
   ```sh
   sudo nix-collect-garbage -d
   ```
+
+# DisplayLink
+
+There may be requirements for a "Display Link" device in certain configurations.
+
+You can download the latest driver [here](https://www.synaptics.com/products/displaylink-graphics/downloads/ubuntu).

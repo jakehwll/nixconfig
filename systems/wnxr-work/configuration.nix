@@ -28,6 +28,8 @@
 
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
+  # time.timeZone = "Europe/London"; 
+  # ^^^ UTC.
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.utf8";
@@ -139,7 +141,7 @@
   services.openssh.kbdInteractiveAuthentication = false;
   services.openssh.permitRootLogin = "no";
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "nvidia" "displaylink" "modesetting" ];
   hardware.opengl.enable = true;
   hardware.nvidia.prime = {
     sync.enable = true;
