@@ -30,6 +30,7 @@
     oh-my-zsh
     nodejs
     stripe-cli
+    kubectl
     wally-cli
   ];
 }
