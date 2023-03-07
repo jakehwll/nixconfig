@@ -32,5 +32,6 @@
     stripe-cli
     kubectl
     wally-cli
+    yarn
   ];
 }
