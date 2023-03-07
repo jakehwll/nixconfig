@@ -137,9 +137,9 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  services.openssh.passwordAuthentication = false;
-  services.openssh.kbdInteractiveAuthentication = false;
-  services.openssh.permitRootLogin = "no";
+  services.openssh.settings.PasswordAuthentication = false;
+  services.openssh.settings.KbdInteractiveAuthentication = false;
+  services.openssh.settings.PermitRootLogin = "no";
 
   services.xserver.videoDrivers = [ "nvidia" "displaylink" "modesetting" ];
   hardware.opengl.enable = true;
