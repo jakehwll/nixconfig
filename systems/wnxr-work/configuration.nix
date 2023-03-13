@@ -31,6 +31,10 @@
   # time.timeZone = "Europe/London"; 
   # ^^^ UTC.
 
+  # ClamAV Antivirus
+  services.clamav.daemon.enable = true;
+  services.clamav.updater.enable = true;  
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.utf8";
 
