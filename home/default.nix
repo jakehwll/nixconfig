@@ -22,7 +22,7 @@
     docker-compose
     docker-buildx
     nodePackages.npm
-    awscli
+    awscli2
     htop
     appimage-run
     unzip
