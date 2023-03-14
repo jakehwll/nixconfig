@@ -146,12 +146,18 @@
   services.openssh.settings.PermitRootLogin = "no";
 
   services.xserver.videoDrivers = [ "nvidia" "displaylink" "modesetting" ];
-  hardware.opengl.enable = true;
+  # hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.powerManagement.enable = true;
   hardware.nvidia.prime = {
     sync.enable = true;
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
   };
+
+  services.fprintd.enable = true;
+
+  hardware.opengl.enable = true;
 
   services.pipewire  = {
     media-session.config.bluez-monitor.rules = [
@@ -196,7 +202,8 @@
     ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
   '';
 
-  boot.kernelParams = [ "module_blacklist=i915" ];
+  # This apparently causes less blackscreens, however I couldn't find a noticeable difference.
+  # boot.kernelParams = [ "module_blacklist=i915" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
