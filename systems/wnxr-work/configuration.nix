@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -28,6 +28,12 @@
 
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
+  # time.timeZone = "Europe/London"; 
+  # ^^^ UTC.
+
+  # ClamAV Antivirus
+  services.clamav.daemon.enable = true;
+  services.clamav.updater.enable = true;  
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.utf8";
@@ -135,17 +141,23 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  services.openssh.passwordAuthentication = false;
-  services.openssh.kbdInteractiveAuthentication = false;
-  services.openssh.permitRootLogin = "no";
+  services.openssh.settings.PasswordAuthentication = false;
+  services.openssh.settings.KbdInteractiveAuthentication = false;
+  services.openssh.settings.PermitRootLogin = "no";
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" "displaylink" "modesetting" ];
+  # hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.powerManagement.enable = true;
   hardware.nvidia.prime = {
     sync.enable = true;
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
   };
+
+  services.fprintd.enable = true;
+
+  hardware.opengl.enable = true;
 
   services.pipewire  = {
     media-session.config.bluez-monitor.rules = [
@@ -185,6 +197,13 @@
   # networking.firewall.enable = false;
 
   hardware.keyboard.zsa.enable = true;
+
+  services.xserver.displayManager.sessionCommands = ''
+    ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
+  '';
+
+  # This apparently causes less blackscreens, however I couldn't find a noticeable difference.
+  # boot.kernelParams = [ "module_blacklist=i915" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

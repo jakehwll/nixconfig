@@ -34,7 +34,6 @@
         "yarn"
         "zsh-navigation-tools"
         "urltools"
-        "thefuck" 
       ];
       theme = "agnoster";
     };
