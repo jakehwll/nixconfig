@@ -1,12 +1,13 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    hyprland.url = "github:hyprwm/Hyprland";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, hyprland, home-manager, ... }:
     let
       users = {
         me = {
@@ -46,6 +47,8 @@
           modules = [
             ./systems/wnxr-nix/configuration.nix
             ./common/default.nix
+            hyprland.nixosModules.default
+            {programs.hyprland.enable = true;}
             home-manager.nixosModules.home-manager
             {
               home-manager = {

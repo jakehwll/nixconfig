@@ -33,5 +33,6 @@
     kubectl
     wally-cli
     yarn
+    libreoffice
   ];
 }
