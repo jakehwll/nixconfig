@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, hyprland, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       users = {
         me = {
@@ -47,8 +47,6 @@
           modules = [
             ./systems/wnxr-nix/configuration.nix
             ./common/default.nix
-            hyprland.nixosModules.default
-            {programs.hyprland.enable = true;}
             home-manager.nixosModules.home-manager
             {
               home-manager = {
