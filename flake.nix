@@ -5,8 +5,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, hyprland, ... }:
     let
       users = {
         me = {
@@ -47,6 +48,8 @@
             ./systems/wnxr-nix/configuration.nix
             ./common/default.nix
             home-manager.nixosModules.home-manager
+            hyprland.homeManagerModules.default
+            {wayland.windowManager.hyprland.enable = true;}
             {
               home-manager = {
                 useGlobalPkgs = true;
