@@ -33,36 +33,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.utf8";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.wayland = false;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Remove packages from default GNOME install.
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    epiphany # web browser
-    geary # email reader
-    evince # document viewer
-    gnome-characters
-    totem # video player
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-  ]);
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "au";
-    xkbVariant = "";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -141,7 +111,6 @@
   services.openssh.settings.KbdInteractiveAuthentication = false;
   services.openssh.settings.PermitRootLogin = "no";
 
-  services.xserver.videoDrivers = [ "nvidia" "displaylink" "modesetting" ];
   # hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   hardware.nvidia.powerManagement.enable = true;
@@ -162,10 +131,6 @@
   # networking.firewall.enable = false;
 
   hardware.keyboard.zsa.enable = true;
-
-  services.xserver.displayManager.sessionCommands = ''
-    ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
-  '';
 
   # This apparently causes less blackscreens, however I couldn't find a noticeable difference.
   # boot.kernelParams = [ "module_blacklist=i915" ];
